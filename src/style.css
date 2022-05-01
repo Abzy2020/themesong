@@ -1,0 +1,144 @@
+@media (max-width: 750px) {
+    .song--one--display {
+        border-style: none;
+        border-radius: 15px;
+        height: 250px;
+        width: 225px;
+    }
+    .music {
+        padding-top: 30px;
+        padding-bottom: 32px;
+    }
+}
+@media (min-width: 750px) {
+    .song--one--display {
+        border-style: none;
+        border-radius: 15px;
+        height: 330px;
+        width: 330px;
+    }
+}
+@media (max-width: 1110px) {
+    .app--container{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+@media (min-width: 1110px) {
+    .app--container{
+        margin-left: 170px;
+        margin-right: 170px;
+    } 
+}
+
+body {
+    margin: 0;
+}
+
+.music {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.themesong--bg {
+    background-color: #221f1f;
+}
+
+.themesong--title {
+    color: #ffffff;
+    background-color: #1c1a1a;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    margin-top: 0;
+}
+.themesong--title:hover {
+    color: rgb(89, 191, 89)
+}
+
+.app--container {
+    background-color: #191414;
+    font-family: 'Inter', sans-serif;
+    border-radius: 15px;
+}
+
+.embeds--frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.song--title {
+    color: rgb(158, 158, 158);
+    font-size: 10px;
+    width: 225px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.song--one--display {
+    border-style: none;
+    border-radius: 15px;
+}
+
+.vs {
+    margin: 30px;
+    color: rgb(158, 158, 158);
+}
+
+.voting--panel {
+    background-color: #1c1a1a;
+    margin-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.vote--title {
+    color: rgb(158, 158, 158);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.voting--btns {
+    display: flex;
+    justify-content: center;
+}
+
+.voting--btns > button:hover {
+    color: rgb(61, 224, 61);
+    background-color: rgb(42, 42, 42);
+    cursor: pointer;
+}
+
+.vote--one {
+    color: #ffffff;
+    background-color: #383535;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-style: none;
+}
+
+.vote--two {
+    color: #ffffff;
+    background-color: #383535;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-style: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 1px;
+}
+
