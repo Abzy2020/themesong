@@ -1,3 +1,5 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import Music from "./Music";
 import Game from "./Game";
 
@@ -5,6 +7,16 @@ export default function VoteMode(props) {
 
     const songOne = props.one
     const songTwo = props.two
+    const nav = useNavigate();
+    
+    const linkSongOne = () => {
+        nav(`/results`)
+        new props.funcOne()
+    }
+    const linkSongTwo = () => {
+        nav(`/results`)
+        new props.funcTwo()
+    }
 
     return(
         <div className="themesong--bg">
@@ -20,8 +32,8 @@ export default function VoteMode(props) {
                      />
                 </div>
                 <Game
-                    funcOne={props.funcOne}
-                    funcTwo={props.funcTwo}
+                    funcOne={linkSongOne}
+                    funcTwo={linkSongTwo}
                 />
             </div>
         </div>

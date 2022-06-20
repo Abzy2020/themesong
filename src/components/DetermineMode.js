@@ -1,23 +1,21 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import VoteMode from "./VoteMode";
 import ResultsMode from "./ResultsMode";
 import audioData from "./audioData";
 
 export default function DetermineMode() {
-    const today = new Date()
-    const time = today.getHours()
 
     const [winner, setWinner] = React.useState('')
     const chooseOne = () => {
-        setWinner(prevWinner => prevWinner = songOne)
+        setWinner(prevWinner => prevWinner = songOne);
     }
     const chooseTwo = () => {
-        setWinner(prevWinner => prevWinner = songTwo)
+        setWinner(prevWinner => prevWinner = songTwo);
     }
 
     const [songOne, setSongOne] = React.useState('');
     const [songTwo, setSongTwo] = React.useState('');
-
     const getRandomSongOne = () => {
         const music = audioData;
         const randomSongNumber = Math.floor(Math.random() * music.length);
@@ -34,24 +32,34 @@ export default function DetermineMode() {
         getRandomSongOne();
         getRandomSongTwo();
     }
-    React.useEffect(function(){
-        chooseRandomSongs()
+
+    React.useEffect(() => {
+        chooseRandomSongs();
     }, [])
 
-    return(
-        <div>
-            { 5 < time && time < 25 ?
-            <VoteMode 
-                funcOne={chooseOne}
-                funcTwo={chooseTwo}
-                randomAudio={chooseRandomSongs}
-                one={songOne}
-                two={songTwo}
-            />
-            :
-            <ResultsMode
-                results={winner}
-            />}
-        </div>
+    return (
+        <Router>
+            <Routes>
+                <Route 
+                    path="/results" 
+                    element={
+                        <ResultsMode 
+                            winner={winner} 
+                        />
+                    }
+                />
+                <Route 
+                    path="/"
+                    element={
+                        <VoteMode 
+                            funcOne={chooseOne} 
+                            funcTwo={chooseTwo} 
+                            randomAudio={chooseRandomSongs} 
+                            one={songOne} 
+                            two={songTwo}/>
+                    }
+                />
+            </Routes>
+        </Router>
     )
 }

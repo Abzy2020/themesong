@@ -6,7 +6,8 @@ export default function Music(props) {
             <div className="embeds--frame">
                 <div className="embed--one">
                     <h4 className="song--title">{props.artist} - {props.songTitle}</h4>
-                    <iframe 
+                    <iframe
+                        title="spotify-music"
                         className="song--one--display" 
                         src={props.embedUrl}>
                     </iframe>
