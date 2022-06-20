@@ -1,9 +1,12 @@
-const express = require('express');
-const axios = require('axios');
+import express from 'express';
+import axios from 'axios';
+import { config } from 'dotenv';
 
+config({path: "../.env"});
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
+//request lyrics
 app.get('/results/:artist/:track', (req, res) => {
 
     const options = {
@@ -12,13 +15,18 @@ app.get('/results/:artist/:track', (req, res) => {
         params: {
             q_artist: req.params.artist,
             q_track: req.params.track,
-            apikey: "b7fae0ed351f31816949da88d7cf2e09"
+            apikey: process.env.API_KEY
         },
     };
-    axios.request(options).then((response) => {
-        data = response.data.message.body.lyrics.lyrics_body
-        res.send(data)
-    })
+
+    const getLyrics = async () => {
+        const response = await axios.request(options);
+        data = response.data.message.body.lyrics.lyrics_body;
+    
+        console.log(data);
+        res.send(data);
+    }
+    getLyrics();
 })
 
 app.listen(port, () => {

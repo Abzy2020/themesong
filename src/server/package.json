@@ -4,15 +4,17 @@
   "description": "",
   "main": "server.js",
   "proxy": "http://localhost:3001/",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "devStart": "nodemon ./src/server/server.js"
   },
   "dependencies": {
-    "express": "^4.18.1",
     "async_hooks": "^1.0.0",
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
